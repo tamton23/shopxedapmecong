@@ -1,0 +1,67 @@
+﻿@model IEnumerable<shop.Models.Mathang>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="mb-4 text-center">Danh sách sản phẩm</h1>
+
+<p>
+    <a asp-action="Createmathang" class="btn btn-primary mb-3">
+        <i class="bi bi-plus-circle"></i> Thêm
+    </a>
+</p>
+
+<table class="table table-striped table-hover table-bordered align-middle">
+    <thead class="table-dark text-center">
+        <tr>
+            <th>Tên</th>
+            <th>Giá gốc</th>
+            <th>Giá bán</th>
+            <th>Số lượng</th>
+            <th>Mô tả</th>
+            <th>Hình ảnh</th>
+            <th>Lượt xem</th>
+            <th>Lượt mua</th>
+            <th>Danh mục</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-truncate" style="max-width: 150px;">
+                    @Html.DisplayFor(modelItem => item.Ten)
+                </td>
+                <td class="text-end">@Html.DisplayFor(modelItem => item.GiaGoc) ₫</td>
+                <td class="text-end">@Html.DisplayFor(modelItem => item.GiaBan) ₫</td>
+                <td class="text-center">@Html.DisplayFor(modelItem => item.SoLuong)</td>
+                <td class="text-truncate" style="max-width: 300px;">
+                    @Html.DisplayFor(modelItem => item.MoTa)
+                </td>
+                <td class="text-center">
+                    <img src="~/images/products/@item.HinhAnh" alt="Hình ảnh sản phẩm" class="img-thumbnail" style="width: 40px; height: auto;">
+                </td>
+                <td class="text-center">@Html.DisplayFor(modelItem => item.LuotXem)</td>
+                <td class="text-center">@Html.DisplayFor(modelItem => item.LuotMua)</td>
+                <td class="text-center">@Html.DisplayFor(modelItem => item.MaDmNavigation.MaDm)</td>
+                <td class="text-center">
+                    <div class="btn-group" role="group">
+                        <a asp-action="Editmathang" asp-route-id="@item.MaMh" class="btn btn-sm btn-warning">
+                            <i class="bi bi-pencil-square"></i> Sửa
+                        </a>
+                        <a asp-action="Detailsmathang" asp-route-id="@item.MaMh" class="btn btn-sm btn-info">
+                            <i class="bi bi-eye"></i> Chi tiết
+                        </a>
+                        <a asp-action="Deletemathang" asp-route-id="@item.MaMh" class="btn btn-sm btn-danger">
+                            <i class="bi bi-trash"></i> Xóa
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />

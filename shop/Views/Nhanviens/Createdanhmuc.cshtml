@@ -1,0 +1,33 @@
+﻿@model shop.Models.Danhmuc
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Thêm danh mục</h2>
+
+    <div class="card p-4 shadow-sm">
+        <h4 class="mb-4">Thông tin danh mục</h4>
+
+        <form asp-action="Createdanhmuc">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="mb-3">
+                <label asp-for="Ten" class="form-label">Tên danh mục</label>
+                <input asp-for="Ten" class="form-control" />
+                <span asp-validation-for="Ten" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <input type="submit" value="Thêm" class="btn btn-primary w-100" />
+            </div>
+        </form>
+    </div>
+
+    <div class="mt-4 text-center">
+        <a asp-action="Indexdanhmuc" class="btn btn-secondary">Về danh mục</a>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

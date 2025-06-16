@@ -1,0 +1,53 @@
+﻿@model shop.Models.Hoadon
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<h1 class="text-center my-4">Chỉnh sửa Hóa Đơn</h1>
+
+<h4 class="text-secondary">Thông tin hóa đơn</h4>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form asp-action="Edit" class="p-4 border rounded bg-light shadow-sm">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <input type="hidden" asp-for="MaHd" />
+
+            <!-- Ngày -->
+            <div class="mb-3">
+                <label asp-for="Ngay" class="form-label fw-bold"></label>
+                <input asp-for="Ngay" class="form-control" />
+                <span asp-validation-for="Ngay" class="text-danger"></span>
+            </div>
+
+            <!-- Tổng tiền -->
+            <div class="mb-3">
+                <label asp-for="TongTien" class="form-label fw-bold"></label>
+                <input asp-for="TongTien" class="form-control" />
+                <span asp-validation-for="TongTien" class="text-danger"></span>
+            </div>
+
+            <!-- Mã khách hàng -->
+            <div class="mb-3">
+                <label asp-for="MaKh" class="form-label fw-bold"></label>
+                <select asp-for="MaKh" class="form-select" asp-items="ViewBag.MaKh"></select>
+                <span asp-validation-for="MaKh" class="text-danger"></span>
+            </div>
+
+            <!-- Trạng thái -->
+            <div class="mb-3">
+                <label asp-for="TrangThai" class="form-label fw-bold"></label>
+                <input asp-for="TrangThai" class="form-control" />
+                <span asp-validation-for="TrangThai" class="text-danger"></span>
+            </div>
+
+            <!-- Nút Lưu -->
+            <div class="d-flex justify-content-between">
+                <input type="submit" value="Lưu" class="btn btn-primary" />
+                <a asp-action="Indexhoadon" class="btn btn-secondary">Về danh sách hóa đơn</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+

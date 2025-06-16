@@ -1,0 +1,18 @@
+﻿@model shop.Models.Hoadon
+@{
+    ViewData["Title"] = "Đặt hàng thành công";
+}
+<a asp-controller="Customer" asp-action="Index"><i class="bi bi-shop-window"></i></a> / Giỏ hàng / Đặt thàng thành công
+<div class="container mt-5">
+    <!-- Thông báo thành công -->
+    <div class="alert alert-success" role="alert">
+        <h3 class="alert-heading">Đặt hàng thành công!</h3>
+        <p>Đơn hàng mã số <strong>@Model.MaHd</strong> trị giá <strong>@(Model.TongTien)đ</strong> đã được hệ thống ghi nhận. Chúng tôi sẽ sớm liên hệ bạn để xác nhận...</p>
+        <hr>
+        <p class="mb-0">Cảm ơn bạn đã mua sắm tại cửa hàng của chúng tôi. Chúc bạn một ngày tốt lành!</p>
+    </div>
+    <!-- Nút quay lại hoặc hành động tiếp theo -->
+    <div class="d-flex justify-content-center mt-4">
+        <a asp-controller="Customer" asp-action="Index" class="btn btn-primary">Quay lại trang chủ</a>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿@{
+ViewData["Title"] = "Hồ sơ khách hàng";
+}@if(ViewBag.nhanvien != null)
+{
+    <div class="container mt-5">
+        <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white text-center">
+                <h3>Chào, @ViewBag.nhanvien.Ten!</h3>
+            </div>
+            <div class="card-body">
+                <!-- Email -->
+                <div class="mb-3">
+                    <label class="form-label"><i class="bi bi-envelope"></i> Email</label>
+                    <p>@ViewBag.nhanvien.Email</p>
+                </div>
+
+                <!-- Họ tên -->
+                <div class="mb-3">
+                    <label class="form-label"><i class="bi bi-person-circle"></i> Họ tên</label>
+                    <p>@ViewBag.nhanvien.Ten</p>
+                </div>
+
+                <!-- Điện thoại -->
+                <div class="mb-3">
+                    <label class="form-label"><i class="bi bi-telephone"></i> Điện thoại</label>
+                    <p>@ViewBag.nhanvien.DienThoai</p>
+                </div>
+                
+                <!-- Đăng xuất -->
+                <div class="d-flex justify-content-center mt-4">
+                    <a asp-action="Signout" class="btn btn-danger">
+                        <i class="bi bi-box-arrow-right"></i> Đăng xuất
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <p>Vui lòng <a asp-controller="Nhanviens" asp-action="Login">Đăng nhập</a></p>
+}

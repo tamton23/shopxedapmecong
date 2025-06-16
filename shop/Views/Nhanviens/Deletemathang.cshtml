@@ -1,0 +1,79 @@
+﻿@model shop.Models.Mathang
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+            <h1 class="mb-0">Xóa mặt hàng</h1>
+        </div>
+        <div class="card-body bg-light">
+            <h3 class="text-center text-danger fw-bold">Bạn có chắc muốn xóa mặt hàng này?</h3>
+
+            <!-- Product Details -->
+            <div class="mt-4">
+                <h4 class="text-success text-uppercase border-bottom pb-2">
+                    <i class="bi bi-info-circle-fill"></i> Chi tiết mặt hàng
+                </h4>
+                <table class="table table-bordered mt-3">
+                    <tbody>
+                        <tr>
+                            <th class="bg-light text-muted">Tên mặt hàng</th>
+                            <td>@Html.DisplayFor(model => model.Ten)</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-light text-muted">Giá gốc</th>
+                            <td class="text-danger">@Html.DisplayFor(model => model.GiaGoc) VND</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-light text-muted">Giá bán</th>
+                            <td class="text-success">@Html.DisplayFor(model => model.GiaBan) VND</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-light text-muted">Số lượng</th>
+                            <td>@Html.DisplayFor(model => model.SoLuong)</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-light text-muted">Mô tả</th>
+                            <td>@Html.DisplayFor(model => model.MoTa)</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-light text-muted">Hình ảnh</th>
+                            <td>
+                                <img src="~/images/products/@Html.DisplayFor(model => model.HinhAnh)" class="img-fluid rounded shadow-sm border" style="max-height: 150px;" alt="Product Image" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="bg-light text-muted">Lượt xem</th>
+                            <td>@Html.DisplayFor(model => model.LuotXem)</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-light text-muted">Lượt mua</th>
+                            <td>@Html.DisplayFor(model => model.LuotMua)</td>
+                        </tr>
+                        <tr>
+                            <th class="bg-light text-muted">Danh mục</th>
+                            <td>@Html.DisplayFor(model => model.MaDmNavigation.MaDm)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Confirmation Buttons -->
+        <div class="card-footer bg-light">
+            <div class="d-flex justify-content-center gap-4">
+                <form asp-action="Deletemathang">
+                    <input type="hidden" asp-for="MaMh" />
+                    <button type="submit" class="btn btn-danger btn-lg px-5">
+                        <i class="bi bi-trash-fill"></i> Xóa
+                    </button>
+                </form>
+                <a asp-action="Indexmathang" class="btn btn-secondary btn-lg px-5">
+                    <i class="bi bi-arrow-left-circle"></i> Về mặt hàng
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

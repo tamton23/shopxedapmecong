@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Đăng nhập";
+}
+<a asp-action="Index"><i class="bi bi-shop-window"></i></a> / Đăng nhập
+
+<div class="row">
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
+    <div class="p-3 shadow">
+        <h3 class="text-center text-dark">ĐĂNG NHẬP</h3>
+        <form method="post" asp-action="Login" class="was-validated">
+            <input class="form-control" type="text" name="email"
+                   placeholder="Email" required><br>
+                
+            <input class="form-control" type="password" name="matkhau"
+                   placeholder="Mật khẩu" required><br>
+            <div class="d-grid">
+                <input class="btn btn-dark btn-block" type="submit"
+                       value="Đăng nhập">
+            </div>
+                <div class="invalid-feedback">Tên tài khoảng hoặc mật khẩu sai.</div>
+        </form>
+        <div class="my-3 text-center">Chưa có tài khoản? <a asp-action="Register">Đăng ký</a></div>
+    </div>
+</div>
+<div class="col-sm-4"></div>
+</div>

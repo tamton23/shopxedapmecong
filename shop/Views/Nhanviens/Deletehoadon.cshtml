@@ -1,0 +1,48 @@
+﻿@model shop.Models.Hoadon
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="text-center my-4 text-danger">Xóa Hóa Đơn</h1>
+
+<div class="alert alert-warning text-center">
+    <h3 class="fw-bold">Bạn có chắc chắn muốn xóa hóa đơn này?</h3>
+</div>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-danger text-white">
+        <h4 class="mb-0">Thông tin hóa đơn</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <!-- Ngày -->
+            <dt class="col-sm-3 fw-bold">Ngày</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Ngay)</dd>
+
+            <!-- Tổng tiền -->
+            <dt class="col-sm-3 fw-bold">Tổng Tiền</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.TongTien)</dd>
+
+            <!-- Trạng thái -->
+            <dt class="col-sm-3 fw-bold">Trạng Thái</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.TrangThai)</dd>
+
+            <!-- Mã khách hàng -->
+            <dt class="col-sm-3 fw-bold">Mã Khách Hàng</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.MaKhNavigation.MaKh)</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="text-center">
+    <form asp-action="Deletehoadon" class="d-inline">
+        <input type="hidden" asp-for="MaHd" />
+        <button type="submit" class="btn btn-danger me-2">
+            <i class="bi bi-trash"></i> Xóa
+        </button>
+    </form>
+    <a asp-action="Indexhoadon" class="btn btn-secondary">
+        <i class="bi bi-arrow-left"></i> Trở về danh sách
+    </a>
+</div>

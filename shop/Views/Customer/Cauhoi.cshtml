@@ -1,0 +1,69 @@
+﻿@model shop.Models.Mathang
+
+@{
+ViewData["Title"] = "Câu hỏi";
+}
+<div class="container py-5">
+    <h1 class="text-center mb-4">Câu Hỏi Thường Gặp</h1>
+    <p class="text-center mb-5">Giải đáp các thắc mắc thường gặp của khách hàng về shop bán xe đạp.</p>
+
+    <div class="row justify-content-center">
+        <!-- Question 1 -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Shop có những loại xe đạp nào?</h5>
+                    <p class="card-text">Shop cung cấp các loại xe đạp đa dạng như xe đạp địa hình, xe đạp đường phố, xe đạp trẻ em, và xe đạp đua. Bạn có thể xem danh mục chi tiết trên trang web.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Question 2 -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Chính sách bảo hành như thế nào?</h5>
+                    <p class="card-text">Tất cả các xe đạp mua tại shop đều được bảo hành từ 1 đến 3 năm, tùy thuộc vào loại xe. Vui lòng xem chi tiết chính sách bảo hành trên trang hỗ trợ.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Question 3 -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Shop có hỗ trợ giao hàng không?</h5>
+                    <p class="card-text">Shop hỗ trợ giao hàng toàn quốc với phí vận chuyển ưu đãi. Đơn hàng từ 5 triệu đồng trở lên sẽ được miễn phí giao hàng.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Question 4 -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Tôi có thể đổi trả xe đạp không?</h5>
+                    <p class="card-text">Shop hỗ trợ đổi trả xe đạp trong vòng 7 ngày kể từ khi nhận hàng, với điều kiện sản phẩm chưa qua sử dụng và còn nguyên tem bảo hành.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Question 5 -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Làm sao để chọn kích cỡ xe đạp phù hợp?</h5>
+                    <p class="card-text">Bạn có thể tham khảo bảng kích thước xe đạp trên trang web hoặc liên hệ nhân viên hỗ trợ để được tư vấn chọn kích cỡ phù hợp với chiều cao của bạn.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Question 6 -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Phương thức thanh toán nào được chấp nhận?</h5>
+                    <p class="card-text">Shop chấp nhận thanh toán bằng tiền mặt, thẻ tín dụng, thẻ ghi nợ, và chuyển khoản ngân hàng. Vui lòng chọn phương thức phù hợp khi thanh toán.</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a asp-controller="Customer" asp-action="Index" class="btn btn-primary btn-lg">Bắt đầu mua sắm</a>
+        </div>
+    </div>
+</div>

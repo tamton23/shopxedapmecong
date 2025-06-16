@@ -1,0 +1,36 @@
+﻿@model shop.Models.Hoadon
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center my-4">Tạo Hóa Đơn Mới</h1>
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Nhập thông tin hóa đơn</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Createhoadon">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+            <!-- Mã Khách Hàng -->
+            <div class="mb-3">
+                <label asp-for="MaKh" class="form-label fw-bold">Khách Hàng</label>
+                <select asp-for="MaKh" class="form-select" asp-items="ViewBag.MaKh"></select>
+            </div>
+
+            <!-- Nút tạo -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-success me-2">
+                    <i class="bi bi-plus-circle"></i> Tạo
+                </button>
+                <a asp-action="Indexhoadon" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left"></i> Trở về danh sách
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<shop.Models.Khachhang>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h1 class="my-4">Danh sách khách hàng</h1>
+
+<p>
+    <a asp-action="Createkhachhang" class="btn btn-primary mb-3">Thêm mới</a>
+</p>
+
+<table class="table table-striped table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Tên</th>
+            <th>Điện thoại</th>
+            <th>Email</th>
+            <th>Mật khẩu</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Ten)</td>
+                <td>@Html.DisplayFor(modelItem => item.DienThoai)</td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                <td>@Html.DisplayFor(modelItem => item.MatKhau)</td>
+                <td>
+                    <a asp-action="Editkhachhang" asp-route-id="@item.MaKh" class="btn btn-sm btn-warning">Sửa</a>
+                    <a asp-action="Detailskhachhang" asp-route-id="@item.MaKh" class="btn btn-sm btn-info">Chi tiết</a>
+                    <a asp-action="Deletekhachhang" asp-route-id="@item.MaKh" class="btn btn-sm btn-danger">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+    </tbody>
+</table>

@@ -1,0 +1,31 @@
+﻿@model shop.Models.Khachhang
+
+@{
+    ViewData["Title"] = "Details";
+}
+<h1 class="my-4">Chi tiết khách hàng</h1>
+
+<div class="card shadow">
+    <div class="card-body">
+        <h4 class="card-title mb-4">Thông tin khách hàng</h4>
+        <dl class="row">
+            <dt class="col-sm-3 fw-bold">Tên</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Ten)</dd>
+
+            <dt class="col-sm-3 fw-bold">Điện thoại</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DienThoai)</dd>
+
+            <dt class="col-sm-3 fw-bold">Email</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
+
+            <dt class="col-sm-3 fw-bold">Mật khẩu</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.MatKhau)</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Editkhachhang" asp-route-id="@Model?.MaKh" class="btn btn-warning">Chỉnh sửa</a>
+    <a asp-action="Indexkhachhang" class="btn btn-secondary">Quay lại danh sách</a>
+</div>
+

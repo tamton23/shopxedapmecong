@@ -1,0 +1,41 @@
+﻿@model shop.Models.Hoadon
+
+@{
+    ViewData["Title"] = "Details";
+}
+<h1 class="text-center my-4">Chi Tiết Hóa Đơn</h1>
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Thông tin chi tiết</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <!-- Ngày -->
+            <dt class="col-sm-3 fw-bold">Ngày</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Ngay)</dd>
+
+            <!-- Tổng tiền -->
+            <dt class="col-sm-3 fw-bold">Tổng Tiền</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.TongTien)</dd>
+
+            <!-- Trạng thái -->
+            <dt class="col-sm-3 fw-bold">Trạng Thái</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.TrangThai)</dd>
+
+            <!-- Mã khách hàng -->
+            <dt class="col-sm-3 fw-bold">Mã Khách Hàng</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.MaKhNavigation.MaKh)</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Edithoadon" asp-route-id="@Model?.MaHd" class="btn btn-warning me-2">
+        <i class="bi bi-pencil-square"></i> Chỉnh sửa
+    </a>
+    <a asp-action="Indexhoadon" class="btn btn-secondary">
+        <i class="bi bi-arrow-left"></i> Về danh sách
+    </a>
+</div>
+

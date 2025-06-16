@@ -1,0 +1,20 @@
+﻿@model shop.Models.Danhmuc
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Thông tin danh mục</h2>
+
+    <div class="card p-4 shadow-sm">
+        <dl class="row">
+            <dt class="col-sm-3">Tên danh mục</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Ten)</dd>
+        </dl>
+    </div>
+
+    <div class="mt-4 text-center">
+        <a asp-action="Editdanhmuc" asp-route-id="@Model?.MaDm" class="btn btn-warning">Sửa</a>
+        <a asp-action="Indexdanhmuc" class="btn btn-secondary">Về danh mục</a>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+﻿@model shop.Models.Mathang
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h6 >
+    <a asp-action="Index"><i class="bi bi-shop-window"></i></a> / Sản Phẩm / <a style=" text-decoration: none; color:black;" asp-action="List" asp-route-id="@Model?.MaDm">Sản phẩm thuộc danh mục @Model?.MaDm</a>  / Chi tiết
+</h6>
+<div class="container mt-4">
+    <h4 class="mb-3 text-primary">Chi tiết Mặt hàng</h4>
+    <hr />
+    <div class="table-responsive shadow-lg rounded p-3 bg-light">
+        <table class="table table-hover table-striped">
+            <tbody>
+                <tr>
+                    <th class="col-sm-3 text-secondary">Tên mặt hàng</th>
+                    <td class="fw-bold">@Html.DisplayFor(model => model.Ten)</td>
+                </tr>
+                <tr>
+                    <th class="text-secondary">Giá gốc</th>
+                    <td>@Html.DisplayFor(model => model.GiaGoc) đ</td>
+                </tr>
+                <tr>
+                    <th class="text-secondary">Giá bán</th>
+                    <td class="text-danger fw-bold">@Html.DisplayFor(model => model.GiaBan) đ</td>
+                </tr>
+                <tr>
+                    <th class="text-secondary">Số lượng</th>
+                    <td>@Html.DisplayFor(model => model.SoLuong)</td>
+                </tr>
+                <tr>
+                    <th class="text-secondary">Mô tả</th>
+                    <td>@Html.DisplayFor(model => model.MoTa)</td>
+                </tr>
+                <tr>
+                    <th class="text-secondary">Minh họa</th>
+                    <td>
+                        <img src="~/images/products/@Model.HinhAnh" alt="@Model.Ten" class="img-fluid rounded border" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="text-secondary">Lượt xem</th>
+                    <td>@Html.DisplayFor(model => model.LuotXem)</td>
+                </tr>
+                <tr>
+                    <th class="text-secondary">Lượt mua</th>
+                    <td>@Html.DisplayFor(model => model.LuotMua)</td>
+                </tr>
+                <tr>
+                    <th class="text-secondary">Thuộc danh mục</th>
+                    <td>@Html.DisplayFor(model => model.MaDmNavigation.MaDm)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="mt-4 d-flex justify-content-between">
+            <div class="text-center"><a class="btn btn-outline-info mt-auto" asp-controller="Customer" asp-action="AddToCart" asp-route-id="@Model?.MaMh">Mua</a></div>
+        <a asp-action="Index" class="btn btn-outline-secondary">Quay lại danh sách</a>
+    </div>
+</div>

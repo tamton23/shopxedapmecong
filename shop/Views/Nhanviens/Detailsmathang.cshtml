@@ -1,0 +1,74 @@
+﻿@model shop.Models.Mathang
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="container mt-5">
+    <h1 class="text-center mb-4 text-primary"><i class="bi bi-box-seam"></i> Chi tiết mặt hàng</h1>
+
+    <div class="border p-4 rounded shadow bg-light">
+        <h4 class="mb-4 text-success"><i class="bi bi-info-circle-fill"></i> Thông tin mặt hàng</h4>
+
+        <dl class="row">
+            <dt class="col-sm-3 text-muted">Tên mặt hàng</dt>
+            <dd class="col-sm-9 fw-bold">@Html.DisplayFor(model => model.Ten)</dd>
+
+            <dt class="col-sm-3 text-muted">Giá gốc</dt>
+            <dd class="col-sm-9 text-danger fw-bold">@Html.DisplayFor(model => model.GiaGoc) VND</dd>
+
+            <dt class="col-sm-3 text-muted">Giá bán</dt>
+            <dd class="col-sm-9 text-success fw-bold">@Html.DisplayFor(model => model.GiaBan) VND</dd>
+
+            <dt class="col-sm-3 text-muted">Số lượng</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SoLuong)</dd>
+
+            <dt class="col-sm-3 text-muted">Mô tả</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.MoTa)</dd>
+
+            <dt class="col-sm-3 text-muted">Hình ảnh</dt>
+            <dd class="col-sm-9">
+                <img src="~/images/products/@Html.DisplayFor(model => model.HinhAnh)"
+                     class="img-fluid rounded shadow hover-scale"
+                     alt="Product Image" style="max-width: 100%; height: auto; max-height: 300px;" />
+            </dd>
+
+            <dt class="col-sm-3 text-muted">Lượt xem</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LuotXem)</dd>
+
+            <dt class="col-sm-3 text-muted">Lượt mua</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LuotMua)</dd>
+
+            <dt class="col-sm-3 text-muted">Danh mục</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.MaDmNavigation.MaDm)</dd>
+        </dl>
+        <div class="text-center mt-4">
+        <a asp-action="Editmathang" asp-route-id="@Model?.MaMh" class="btn btn-warning btn-lg me-2 hover-shadow">
+            <i class="bi bi-pencil-square"></i> Sửa
+        </a>
+        <a asp-action="Indexmathang" class="btn btn-secondary btn-lg hover-shadow">
+            <i class="bi bi-arrow-left-circle"></i> Về mặt hàng
+        </a>
+    </div>
+    </div>
+
+    <br />
+</div>
+
+<!-- CSS Tùy chỉnh -->
+<style>
+    .hover-scale {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .hover-scale:hover {
+        transform: scale(1.05);
+    }
+
+    .hover-shadow {
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .hover-shadow:hover {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    }
+</style>

@@ -1,0 +1,72 @@
+﻿@model shop.Models.Mathang
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Thêm mặt hàng</h1>
+
+    <form asp-action="Createmathang">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Product Name -->
+                <div class="mb-3">
+                    <label asp-for="Ten" class="form-label">Tên</label>
+                    <input asp-for="Ten" class="form-control" />
+                    <span asp-validation-for="Ten" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="GiaGoc" class="form-label">Giá gốc</label>
+                    <input asp-for="GiaGoc" class="form-control" />
+                    <span asp-validation-for="GiaGoc" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="GiaBan" class="form-label">Giá bán</label>
+                    <input asp-for="GiaBan" class="form-control" />
+                    <span asp-validation-for="GiaBan" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="MoTa" class="form-label">Mô tả</label>
+                    <input asp-for="MoTa" class="form-control" />
+                    <span asp-validation-for="MoTa" class="text-danger"></span>
+                </div>
+
+                
+                <!-- Description -->
+                
+                <!-- Image -->
+                <div class="mb-3">
+                    <label asp-for="HinhAnh" class="form-label">Hình ảnh</label>
+                    <input type="file" asp-for="HinhAnh" class="form-control"/>
+                    <span asp-validation-for="HinhAnh" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <!-- Category -->
+                <div class="mb-3">
+                    <label asp-for="MaDm" class="form-label">mã danh mục</label>
+                    <select asp-for="MaDm" class="form-select" asp-items="ViewBag.MaDm"></select>
+                    <span asp-validation-for="MaDm" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mb-3">
+            <input type="submit" value="Thêm" class="btn btn-success" />
+        </div>
+    </form>
+
+    <div class="text-center mt-4">
+        <a asp-action="Indexmathang" class="btn btn-secondary">Về mặt hàng</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

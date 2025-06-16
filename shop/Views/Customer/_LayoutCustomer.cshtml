@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Xe Đạp Mê Công</title>
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/site.css?v=@DateTime.Now.Ticks" />
+
+    <style>
+        .link-hover:hover{
+            color: navy;
+            background-color: grey;
+        }
+        .danhmuc-footer:hover {
+            color: blue;
+        }
+        .card-hover:hover {
+            background-color: lightgray;
+    
+        }
+        </style>
+</head>
+
+
+<body id="top">
+    <a class="text-warning" href="#top" style="
+    right: 10px;
+    position: fixed;
+    padding: 10px;
+    margin-top: 80vh;"> <i class="bi bi-chevron-up" style="font-size: 30px; font-weight: bold; color: black;"></i></a>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-controller="Customer" asp-action="Index">
+                <img src="~/images/carousel/logo.jpg" alt="Avatar Logo" style="width:40px;" class="rounded-pill">Mê Công Shop
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link" aria-current="page" asp-controller="Customer" asp-action="Index">Trang chính</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" asp-controller="Customer" asp-action="Gioithieu">Giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" asp-controller="Customer" asp-action="Huongdanmuahang">Hướng dẫn</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Danh mục sản phẩm</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            @foreach (var i in (List<Danhmuc>)ViewBag.danhmuc)
+                            {
+                                <li><a class="card-hover dropdown-item" asp-action="List" asp-route-id="@i.MaDm">@i.Ten</a></li>
+                            }
+                        </ul>
+
+                    </li>
+                </ul>
+
+                <form class="d-flex me-2">
+                    <input class="form-control me-2" type="text" placeholder="Search">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </form>
+                <div class="d-flex">
+                    @if (ViewBag.khachhang != null)
+                    {
+                // khách đã đăng nhập
+                        <a asp-action="CustomerInfo" class="btn btn-outline-light"><i class="bi bi-person"></i>Chào @ViewBag.khachhang.Ten</a>
+                    }
+                    else
+                    {
+                        <a asp-action="Login" class="btn btn-outline-light"><i class="bi bi-person"></i> Đăng nhập</a>
+                    }
+                    &nbsp;
+                    <a asp-action="ViewCart" class="btn btn-outline-light">
+                        <i class="bi bi-cart3"></i> Giỏ hàng
+                        <span class="badge bg-danger text-white ms-1 rounded-pill">@ViewData["soluong"]</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide shadow" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+        </div>
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner" style="height: 600px">
+            <div class="carousel-item active">
+                <video class="d-block w-100 mx-auto d-block" id="vjs_video_3_html5_api" tabindex="-1" role="application" loop="" muted="muted" playsinline="playsinline" autoplay="" src="https://cdn.coverr.co/videos/coverr-close-up-of-a-bike-to-rent-on-the-street-8208/720p.mp4"></video>
+            </div>
+            <div class="carousel-item ">
+                <img src="~/images/carousel/h10.jpg" alt="Xe đạp banner1" class="d-block w-100 mx-auto d-block">
+                <div class="carousel-caption">
+                    <h3>Niềm tin chất lượng</h3>
+                    <p>Mẫu thiết kế đẹp mắt, thời thượng, hiện đại, mạng mẽ</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/images/carousel/h11.jpg" alt="Xe đạp banner2" class="d-block w-100 mx-auto d-block">
+                <div class="carousel-caption">
+                    <h3>Luôn lắng nghe ý kiến khách hàng</h3>
+                    <p>nhiệt tình, năng động, ưu tiên khách hàng</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/images/carousel/h12.jpg" alt="Xe đạp banner3" class="d-block w-100 mx-auto d-block">
+                <div class="carousel-caption">
+                    <h3>10 năm kinh doanh xe đạp</h3>
+                    <p>gắn bó lâu dài, phát huy tiềm năng</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/images/carousel/h13.jpg" alt="Xe đạp banner4" class="d-block w-100 mx-auto d-block">
+                <div class="carousel-caption">
+                    <h3>Giá thành hợp lý</h3>
+                    <p>vì khách hàng, nhập chính hãng</p>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <!-- Section-->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-1">
+            
+                <div>
+                    @RenderBody()
+                </div>            
+
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">        
+        <div class="container p-3">
+            <div class="row">
+                <div class="col-6 text-light">
+                    <h4>
+                        <span class="badge text-white bg-success">M</span>
+                        <span class="badge text-white bg-danger">E</span>
+                        <span class="badge text-white bg-warning">C</span>
+                        <span class="badge text-white bg-warning">O</span>
+                        <span class="badge text-white bg-warning">N</span>
+                        <span class="badge text-white bg-warning">G</span>
+                        Shop Xe Đạp
+                    </h4>
+                    <p>
+                        <b><i>Địa chỉ:</i></b> 18 Ung Văn Khiêm, phường Đông Xuyên, TP Long Xuyên, An Giang<br>
+                        <b><i>Điện thoại:</i></b> 0372644099<br>
+                        <b><i>Email:</i></b> tamtonthien@gmail.com
+                    </p>
+                </div>
+                <div class="col-3 text-light" style="color:white">
+                    <h4>DANH MỤC HÀNG</h4>
+                    <div>
+                        <ul style=" text-decoration: none">
+                            @foreach (var i in (List<Danhmuc>)ViewBag.danhmuc)
+                            {
+                                <li class="list-group-item danhmuc-footer"><a class="nav-link" asp-action="List" asp-route-id="@i.MaDm">@i.Ten</a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-3 text-light" style="color:white">
+                    <h4>DỊCH VỤ KHÁCH HÀNG</h4>
+                    <a asp-controller="Customer" asp-action="Huongdanmuahang" class="list-group-item danhmuc-footer">Hướng dẫn mua hàng</a>
+                    <a asp-controller="Customer" asp-action="Cauhoi" class="list-group-item danhmuc-footer">Câu hỏi thường gặp</a>
+                    <a asp-controller="Customer" asp-action="Cauhoi" class="list-group-item danhmuc-footer">Về chúng tôi</a>
+                </div>
+            </div>
+            <hr>
+            <p class="m-0 text-center text-warning fw-bolder">Copyright &copy; Xe Đạp Mê Công</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+﻿@model shop.Models.Danhmuc
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Xóa danh mục</h2>
+
+    <div class="card p-4 shadow-sm">
+        <h4 class="mb-4">bạn có chăc muốn xóa danh mục</h4>
+
+        <dl class="row">
+            <dt class="col-sm-3">Tên</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Ten)</dd>
+        </dl>
+
+        <form asp-action="Deletedanhmuc">
+            <input type="hidden" asp-for="MaDm" />
+            <div class="d-flex justify-content-between">
+                <input type="submit" value="Xóa" class="btn btn-danger" />
+                <a asp-action="Indexdanhmuc" class="btn btn-secondary">Về danh mục</a>
+            </div>
+        </form>
+    </div>
+</div>

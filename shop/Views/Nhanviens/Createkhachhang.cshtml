@@ -1,0 +1,46 @@
+﻿@model shop.Models.Khachhang
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h1 class="my-4">Thêm khách hàng mới</h1>
+
+<div class="card shadow">
+    <div class="card-body">
+        <h4 class="card-title mb-4">Thông tin khách hàng</h4>
+        <form asp-action="Createkhachhang">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+            <div class="mb-3">
+                <label asp-for="Ten" class="form-label">Tên</label>
+                <input asp-for="Ten" class="form-control" placeholder="Nhập tên khách hàng" />
+                <span asp-validation-for="Ten" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="DienThoai" class="form-label">Điện thoại</label>
+                <input asp-for="DienThoai" class="form-control" placeholder="Nhập số điện thoại" />
+                <span asp-validation-for="DienThoai" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" class="form-control" placeholder="Nhập email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="MatKhau" class="form-label">Mật khẩu</label>
+                <input asp-for="MatKhau" class="form-control" type="password" placeholder="Nhập mật khẩu" />
+                <span asp-validation-for="MatKhau" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary">Thêm mới</button>
+                <a asp-action="Indexkhachhang" class="btn btn-secondary">Quay lại danh sách</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+

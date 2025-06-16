@@ -1,0 +1,67 @@
+﻿@model shop.Models.Mathang
+
+@{
+ViewData["Title"] = "huongdanmuahang";
+}
+<div class="container py-5">
+    <h1 class="text-center mb-4">Shop Xe Đạp Mê Công</h1>
+    <p class="text-center mb-5">Chúng tôi cam kết mang đến cho bạn những chiếc xe đạp chất lượng cao và dịch vụ tận tâm nhất!</p>
+
+    <div class="row">
+        <!-- About Us -->
+        <div class="col-md-6 mb-4">
+            <h2>Về Chúng Tôi</h2>
+            <p>Shop Xe Đạp Mê Công là đơn vị chuyên cung cấp các loại xe đạp chính hãng từ các thương hiệu uy tín. Với hơn 10 năm kinh nghiệm, chúng tôi tự hào là địa chỉ tin cậy cho mọi tín đồ yêu thích xe đạp.</p>
+            <ul>
+                <li>Đội ngũ nhân viên chuyên nghiệp</li>
+                <li>Dịch vụ bảo hành và hậu mãi tốt</li>
+                <li>Hỗ trợ khách hàng 24/7</li>
+            </ul>
+        </div>
+
+        <!-- Image -->
+        <div class="col-md-6 mb-4">
+            <img src="https://haanhtech.com/wp-content/uploads/2022/08/Day-chuyen-lap-rap-xe-may-6.jpg" alt="Shop Xe Đạp Mê Công" class="img-fluid rounded shadow">
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <div class="row">
+        <!-- Our Mission -->
+        <div class="col-md-6 mb-4">
+            <h2>Sứ Mệnh Của Chúng Tôi</h2>
+            <p>Chúng tôi không chỉ bán xe đạp mà còn mang đến phong cách sống khỏe mạnh và thân thiện với môi trường. Shop Xe Đạp Mê Công mong muốn trở thành người bạn đồng hành đáng tin cậy trên mỗi hành trình của bạn.</p>
+        </div>
+
+        <!-- Core Values -->
+        <div class="col-md-6 mb-4">
+            <h2>Giá Trị Cốt Lõi</h2>
+            <ul>
+                <li>Chất lượng là ưu tiên hàng đầu</li>
+                <li>Khách hàng là trọng tâm</li>
+                <li>Luôn đổi mới và phát triển</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card border-primary mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Thông Tin Liên Hệ</h5>
+                <ul class="list-unstyled">
+                    <li><strong>Địa chỉ:</strong> 123 Đường Mê Công, TP. HCM</li>
+                    <li><strong>Email:</strong> support@shopxedap.com</li>
+                    <li><strong>Điện thoại:</strong> 0987 654 321</li>
+                </ul>
+                <a href="https://www.google.com/maps/place/123+Đường+Mê+Công" class="btn btn-primary" target="_blank">Xem trên Google Maps</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <div class="text-center mt-4">
+            <a asp-controller="Customer" asp-action="Index" class="btn btn-primary btn-lg">Bắt đầu mua sắm</a>
+            <p class="mt-3">Nếu bạn gặp bất kỳ khó khăn nào, vui lòng <a asp-controller="Customer" asp-action="Gioithieu">liên hệ bộ phận hỗ trợ</a> để được giải đáp.</p>
+        </div>
+    </div>
+</div>
