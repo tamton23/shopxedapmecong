@@ -1,3 +1,5 @@
+# Giới thiệu
+    Phát triển website thương mại điện tử bán xe đạp với các chức năng như xem sản phẩm, tìm kiếm, đặt hàng, quản lý giỏ hàng và tài khoản người dùng. Hệ thống gồm hai phân hệ: khách hàng và quản trị viên. Admin có thể quản lý sản phẩm, đơn hàng
 # Mô tả 
     Ngôn ngữ: C#, HTML, CSS, JAVASCRIPT
     Công cụ: Visualstudio, ChatGPT
