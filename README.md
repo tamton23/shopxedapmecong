@@ -7,3 +7,4 @@
 # Minh họa
 ![image](https://github.com/user-attachments/assets/0f5f4a00-1b78-48f7-9bdc-958030498313)
 ![video](https://drive.google.com/file/d/1EnQdFLDQt8NK1zrbYxsTgBa9uFYSZ0oF/view?usp=drive_link)
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)]([https://youtu.be/vt5fpE0bzSY](https://drive.google.com/file/d/1EnQdFLDQt8NK1zrbYxsTgBa9uFYSZ0oF/view?usp=drive_link))
